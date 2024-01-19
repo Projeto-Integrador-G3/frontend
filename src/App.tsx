@@ -1,5 +1,6 @@
 
 import './App.css'
+import Contato from './pages/contato/Contato'
 import Navbar from './components/navbar/Navbar'
 import Footer from './components/footer/Footer'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
@@ -19,10 +20,12 @@ function App() {
             <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />  
+            <Route path="/contato" element={<Contato/>} />
             </Routes>
       </div>
       <Footer />
       </BrowserRouter>
+      
     </>
   )
 }

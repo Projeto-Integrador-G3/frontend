@@ -1,5 +1,7 @@
+import React from 'react';
 
 import './App.css'
+import Sobre from './pages/sobre/Sobre'
 import Contato from './pages/contato/Contato'
 import Navbar from './components/navbar/Navbar'
 import Footer from './components/footer/Footer'
@@ -25,7 +27,7 @@ function App() {
       </div>
       <Footer />
       </BrowserRouter>
-      
+      <Sobre />
     </>
   )
 }

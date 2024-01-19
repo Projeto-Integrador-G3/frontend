@@ -13,13 +13,16 @@ function App() {
     <>
     <BrowserRouter>
       <Navbar />
+      
+      
       <div className='min-h-[80vh]'>
             <Routes>
-              {/* <Route path="/home" element={<Home />} /> */}
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />  
             </Routes>
       </div>
       <Footer />
-      </BrowserRouter><Home/>
+      </BrowserRouter>
     </>
   )
 }

@@ -23,11 +23,12 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />  
             <Route path="/contato" element={<Contato/>} />
+            <Route path="/sobre" element={<Sobre/>} />
             </Routes>
       </div>
       <Footer />
       </BrowserRouter>
-      <Sobre />
+      
     </>
   )
 }

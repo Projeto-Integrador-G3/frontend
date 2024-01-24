@@ -10,12 +10,14 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/home/Home'
 import Login from './pages/login/Login';
 import Cadastro from './pages/cadastro/Cadastro';
+import { AuthProvider } from './contexts/AuthContext'
 
 function App() {
 
 
   return (
     <>
+    <AuthProvider>
       <BrowserRouter>
         <Navbar />
 
@@ -32,6 +34,7 @@ function App() {
         </div>
         <Footer />
       </BrowserRouter>
+      </AuthProvider>
 
     </>
   )

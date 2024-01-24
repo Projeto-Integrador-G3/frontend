@@ -1,5 +1,3 @@
-
-
 import './App.css'
 import Sobre from './pages/sobre/Sobre'
 import Contato from './pages/contato/Contato'

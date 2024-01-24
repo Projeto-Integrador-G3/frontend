@@ -3,8 +3,7 @@ import './Cadastro.css';
 
 function Cadastro() {
 
-
-    return (
+        return (
         <>
             <div className="flex items-center justify-center h-screen font-bold">
 

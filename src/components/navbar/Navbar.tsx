@@ -44,7 +44,7 @@ function Navbar() {
               <a href='/login' className="lg:px-5 p-2 block">Login</a>
             </li>
             <li>
-              <a href='#' className="lg:px-8 p-2 block rounded-xl bg-gray-600">Cadastre-se</a>
+              <a href='/cadastro' className="lg:px-8 p-2 block rounded-xl bg-gray-600">Cadastre-se</a>
             </li>
 
           </ul>

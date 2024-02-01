@@ -7,9 +7,9 @@ function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className='bg-gray-300 py-4'>
-      <div className='flex items-center justify-between xl:max-w-9xl xl:mx-auto px-[4%] flex-wrap w-full'>
-        <a href='/home' className="text-2xl font-bold">Uni</a>
+    <header className='bg-green-300 py-4 text-white'>
+      <div className='flex items-center justify-between xl:max-w-9xl xl:mx-auto px-[4%] flex-wrap w-full text-white'>
+        <a href='/home' className="text-2xl font-bold font-prata">Uni</a>
       {
         open ?  
           
@@ -47,7 +47,7 @@ function Navbar() {
               <a href='/login' className="lg:px-5 p-2 block">Login</a>
             </li>
             <li>
-              <a href='/cadastro' className="lg:px-8 p-2 block rounded-xl bg-gray-600">Cadastre-se</a>
+              <a href='/cadastro' className="lg:px-8 p-2 block rounded-xl bg-green-400 hover:bg-green-200">Cadastre-se</a>
             </li>
 
           </ul>

@@ -1,4 +1,4 @@
-import { List, X } from "@phosphor-icons/react";
+import { Link, List, X } from "@phosphor-icons/react";
 import { useState } from "react";
 
 
@@ -36,6 +36,9 @@ function Navbar() {
           <ul className="flex flex-col items-start lg:flex-row lg:justify-between">
             <li>
               <a href='/sobre' className="lg:px-5 p-2 block">Sobre</a>
+            </li>
+            <li>
+            <a href='/categorias' className='lg:px-5 p-2 block'>Categoria</a>
             </li>
             <li>
               <a href='/contato' className="lg:px-5 p-2 block">Contato</a>

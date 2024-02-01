@@ -104,7 +104,7 @@ function FormCategoria() {
                         placeholder="Descreva aqui sua categoria"
                         name='nome'
                         className="border-2 border-slate-400 rounded p-2"
-                        value={categoria.nome}
+                        value={categoria.descricao}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                     />
                 </div>

@@ -61,7 +61,7 @@ function DeletarCategoria() {
                 alert('O Token Expirou!')
                 handleLogout();
             } else {
-               alert('Erro ao excluir o tema.')
+               alert('Erro ao excluir a categoria.')
             }
         }
 
@@ -79,7 +79,7 @@ function DeletarCategoria() {
                     className='py-2 px-6 bg-slate-600 text-white font-bold text-2xl'>
                     Categoria
                 </header>
-                <p className='p-8 text-3xl bg-slate-00 h-full'>{categoria.nome}</p>
+                <p className='p-8 text-3xl bg-slate-00 h-full'>{categoria.descricao}</p>
                 <div className="flex">
                     <button
                         className='text-slate-100 bg-slate-400 hover:bg-slate-700 w-full py-2'

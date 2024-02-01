@@ -3,7 +3,7 @@ import Categoria from "../../../models/Categoria";
 
 import { ThreeDots } from "react-loader-spinner";
 import { buscar } from "../../../services/Service";
-import CardCategoria from "../cardCategoria/CardCategoria";
+import CardCategoria from "../cardcategoria/CardCategoria";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 
@@ -20,18 +20,20 @@ function ListaCategorias() {
 
     async function buscarCategorias() {
         try {
-            await buscar('/categorias', setCategorias)
+            await buscar('/categorias', setCategorias, {
+                headers: { Authorization: token },
+              });
         } catch (error: any) {
             console.error(error)
         }
     }
 
-    // useEffect(() => {
-    //     if (token === '') {
-    //         alert('Você precisa fazer o login novamente. Sua sessão encerrou.')
-    //         navigate('/login')
-    //     }
-    // }, [token])
+    useEffect(() => {
+        if (token === '') {
+            alert('Você precisa fazer o login novamente. Sua sessão encerrou.')
+            navigate('/login')
+        }
+    }, [token])
 
     useEffect(() => {
         buscarCategorias()

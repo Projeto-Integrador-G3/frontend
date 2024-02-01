@@ -1,5 +1,7 @@
-import { Link, List, X } from "@phosphor-icons/react";
+import { List, X } from "@phosphor-icons/react";
+
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 function Navbar() {
@@ -35,27 +37,27 @@ function Navbar() {
         <nav className={`${open ? "block" : "hidden"} w-full lg:flex lg:items-center lg:w-auto`}>
           <ul className="flex flex-col items-start lg:flex-row lg:justify-between">
             <li>
-              <a href='/sobre' className="lg:px-5 p-2 block">Sobre</a>
+              <Link to='/sobre' className="lg:px-5 p-2 block">Sobre</Link>
             </li>
             <li>
-              <a href='/categorias' className='lg:px-5 p-2 block'>Categoria</a>
+              <Link to='/categorias' className='lg:px-5 p-2 block'>Categoria</Link>
             </li>
             <li>
-              <a href='/cadastrarCategoria' className='lg:px-5 p-2 block'>Cadastrar Categoria</a>
+              <Link to='/cadastrarCategoria' className='lg:px-5 p-2 block'>Cadastrar Categoria</Link>
             </li>
             <li>
-              <a href='/contato' className="lg:px-5 p-2 block">Contato</a>
+              <Link to='/contato' className="lg:px-5 p-2 block">Contato</Link>
             </li>
             <li>
-              <a href='/login' className="lg:px-5 p-2 block">Login</a>
+              <Link to='/login' className="lg:px-5 p-2 block">Login</Link>
             </li>
             <li>
-              <a href='/cadastro' className="lg:px-8 p-2 block rounded-xl bg-gray-600">Cadastre-se</a>
+              <Link to='/cadastro' className="lg:px-8 p-2 block rounded-xl bg-gray-600">Cadastre-se</Link>
             </li>
 
           </ul>
 
-        </nav>
+        </nav>  
       </div>
     </header>
   )

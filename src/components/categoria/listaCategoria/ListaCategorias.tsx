@@ -29,13 +29,6 @@ function ListaCategorias() {
     }
 
     useEffect(() => {
-        if (token === '') {
-            alert('Você precisa fazer o login novamente. Sua sessão encerrou.')
-            navigate('/login')
-        }
-    }, [token])
-
-    useEffect(() => {
         buscarCategorias()
     }, [categorias.length])
 

@@ -7,9 +7,6 @@ import CardCategoria from "../cardcategoria/CardCategoria";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 
-
-
-
 function ListaCategorias() {
 
     const navigate = useNavigate();
@@ -23,20 +20,13 @@ function ListaCategorias() {
 
     async function buscarCategorias() {
         try {
-            await buscar('/categorias', setCategorias, { headers: { Authorization: token, } })
+            await buscar('/categorias', setCategorias, {
+                headers: { Authorization: token },
+              });
         } catch (error: any) {
-            if (error.toString().includes('403')) {
-                alert('O token expirou!')
-                handleLogout()
-            }
+            console.error(error)
         }
     }
-    useEffect(() => {
-        if (token === '') {
-            alert('Você precisa fazer o login novamente. Sua sessão encerrou.')
-            navigate('/login')
-        }
-    }, [token])
 
     useEffect(() => {
         buscarCategorias()

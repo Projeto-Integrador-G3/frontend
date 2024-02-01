@@ -2,7 +2,7 @@ import { ChangeEvent, useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Categoria from "../../../models/Categoria";
 
-import {  ThreeDots } from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 import { buscar, atualizar, cadastrar } from "../../../services/Service";
 import { AuthContext } from "../../../contexts/AuthContext";
 
@@ -12,20 +12,23 @@ function FormCategoria() {
     const navigate = useNavigate();
 
     const [categoria, setCategoria] = useState<Categoria>({} as Categoria)
-    
+
     const [isLoading, setIsLoading] = useState<boolean>(false)
-    
+
     const { usuario, handleLogout } = useContext(AuthContext);
-    
+
     const token = usuario.token;
-    
+
     const { id } = useParams<{ id: string }>();
 
     async function buscarPorId(id: string) {
         try {
-            await buscar(`/categorias/${id}`, setCategoria,{ headers:{Authorization: token,}})
+            await buscar(`/categorias/${id}`, setCategoria)
         } catch (error: any) {
-            
+            if (error.toString().includes('403')) {
+                alert('O token expirou, favor logar novamente')
+                handleLogout()
+            }
         }
     }
 
@@ -34,7 +37,7 @@ function FormCategoria() {
             buscarPorId(id)
         }
     }, [id])
-    
+
     useEffect(() => {
         if (token === '') {
             alert('Você precisa estar logado');
@@ -59,7 +62,7 @@ function FormCategoria() {
 
         if (id !== undefined) {
             try {
-                await atualizar(`/categorias`, categoria, setCategoria, { headers:{Authorization: token,}});
+                await atualizar(`/categorias`, categoria, setCategoria, { headers: { 'Authorization': token } });
                 alert('A categoria foi atualizada com sucesso!')
             } catch (error: any) {
                 alert('Erro ao atualizar a categoria.')
@@ -67,12 +70,12 @@ function FormCategoria() {
                     alert('O Token Expirou!')
                     handleLogout();
                 } else {
-                   alert('Erro ao atualizar a categoria.'  )
+                    alert('Erro ao atualizar a categoria.')
                 }
             }
         } else {
             try {
-                await cadastrar(`/categorias`, categoria, setCategoria, { headers:{Authorization: token,}})
+                await cadastrar(`/categorias`, categoria, setCategoria, { headers: { 'Authorization': token } })
                 alert('A categoria foi cadastrada com sucesso!')
             } catch (error: any) {
                 alert('Erro ao cadastrar a categoria.')
@@ -80,7 +83,7 @@ function FormCategoria() {
                     alert('O Token Expirou!')
                     handleLogout();
                 } else {
-                   alert('Erro ao cadastrar a categoria.'  )
+                    alert('Erro ao cadastrar a categoria.')
                 }
 
             }
@@ -115,19 +118,19 @@ function FormCategoria() {
 
                     {isLoading ?
                         <ThreeDots
-                        visible={true}
-                        height="80"
-                        width="80"
-                        color="#4fa94d"
-                        radius="9"
-                        ariaLabel="three-dots-loading"
-                        wrapperStyle={{}}
-                        wrapperClass="flex justify-center m-1"
+                            visible={true}
+                            height="80"
+                            width="80"
+                            color="#4fa94d"
+                            radius="9"
+                            ariaLabel="three-dots-loading"
+                            wrapperStyle={{}}
+                            wrapperClass="flex justify-center m-1"
                         /> :
                         <span>{id === undefined ? 'Cadastrar' : 'Atualizar'}</span>
-                        
+
                     }
-                    
+
                 </button>
             </form>
         </div>

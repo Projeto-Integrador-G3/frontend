@@ -3,12 +3,9 @@ import Categoria from "../../../models/Categoria";
 
 import { ThreeDots } from "react-loader-spinner";
 import { buscar } from "../../../services/Service";
-import CardCategoria from "../cardcategoria/CardCategoria";
+import CardCategoria from "../cardCategoria/CardCategoria";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
-
-
-
 
 function ListaCategorias() {
 
@@ -23,20 +20,18 @@ function ListaCategorias() {
 
     async function buscarCategorias() {
         try {
-            await buscar('/categorias', setCategorias, { headers: { Authorization: token, } })
+            await buscar('/categorias', setCategorias)
         } catch (error: any) {
-            if (error.toString().includes('403')) {
-                alert('O token expirou!')
-                handleLogout()
-            }
+            console.error(error)
         }
     }
-    useEffect(() => {
-        if (token === '') {
-            alert('Você precisa fazer o login novamente. Sua sessão encerrou.')
-            navigate('/login')
-        }
-    }, [token])
+
+    // useEffect(() => {
+    //     if (token === '') {
+    //         alert('Você precisa fazer o login novamente. Sua sessão encerrou.')
+    //         navigate('/login')
+    //     }
+    // }, [token])
 
     useEffect(() => {
         buscarCategorias()

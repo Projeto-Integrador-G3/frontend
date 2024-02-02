@@ -17,8 +17,8 @@ const CardIntegrante: React.FC<CardIntegrantesProps> = ({ imgUrl, nome, sobre, l
 
     return (
         <div className={`flex ${classDireita} items-center pr-[100px] pb-[100px] pl-[100px]`}>
-            <div className="p-1 rounded-full  overflow-hidden box-border border-4 border-red-500 transform transition duration-500 hover:scale-150">
-                <img className='rounded-full  object-cover' src={imgUrl} alt={`foto ${nome}`} />
+            <div className="rounded-full box-border p-2 border-4 border-red-500 transform transition duration-500 hover:scale-150">
+                <img className='rounded-full max-w-36  object-cover' src={imgUrl} alt={`foto ${nome}`} />
             </div>
 
 

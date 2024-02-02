@@ -37,6 +37,9 @@ function Navbar() {
         <nav className={`${open ? "block" : "hidden"} w-full lg:flex lg:items-center lg:w-auto`}>
           <ul className="flex flex-col items-start lg:flex-row lg:justify-between">
             <li>
+            <Link to='/produtos' className='hover:underline'>Produtos</Link>
+            </li>
+            <li>
               <Link to='/sobre' className="lg:px-5 p-2 block">Sobre</Link>
             </li>
             <li>

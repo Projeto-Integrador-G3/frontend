@@ -1,3 +1,5 @@
+import ListaProdutos from "../../components/produtos/listaProdutos/ListaProdutos";
+
 interface CardProdutoProps {
     imgUrl: string;
     nomeProduto: string;
@@ -94,7 +96,7 @@ function Home() {
                 </div>
             </div>
 
-
+            {<ListaProdutos />}
         </>
 
     )

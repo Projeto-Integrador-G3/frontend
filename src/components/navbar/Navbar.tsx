@@ -23,7 +23,7 @@ function Navbar() {
   if (usuario.token === "") {
     navbar = (
       <>
-        <li>
+        <li className="hover:text-green-400">
           <Link to='/login' className="lg:px-5 p-2 block">Login</Link>
         </li>
         <li>
@@ -33,14 +33,9 @@ function Navbar() {
     )
   } else {
     navbar = (
-      <>
-        <li>
-          <Link to='/cadastrarCategoria' className='lg:px-5 p-2 block'>Cadastrar Categoria</Link>
-        </li>
-        <li>
-          <Link to='' onClick={logout} className='lg:px-8 p-2 block rounded-xl hover:text-dodger-blue-500 hover:underline'>Sair</Link>
-        </li>
-      </>
+      <li>
+        <Link to='' onClick={logout} className='lg:px-8 p-2 block rounded-xl hover:text-green-400 hover:underline'>Sair</Link>
+      </li>
     )
 
   }
@@ -74,16 +69,27 @@ function Navbar() {
 
         <nav className={`${open ? "block" : "hidden"} w-full lg:flex lg:items-center lg:w-auto`}>
           <ul className="flex flex-col items-start lg:flex-row lg:justify-between">
-            <li>
+            <li className="hover:text-green-400">
               <Link to='/produtos' className='lg:px-5 p-2 block'>Produtos</Link>
             </li>
-            <li>
+            <li className="hover:text-green-400">
               <Link to='/categorias' className='lg:px-5 p-2 block'>Categoria</Link>
             </li>
-            <li>
-              <Link to='/sobre' className="lg:px-5 p-2 block">Sobre</Link>
-            </li>
-            <li>
+            {usuario.token === "" ? (
+              <li className="hover:text-green-400">
+                <Link to='/sobre' className="lg:px-5 p-2 block">Sobre</Link>
+              </li>
+            ) : (
+              <>
+                <li className="hover:text-green-400">
+                  <Link to='/cadastrarCategoria' className='lg:px-5 p-2 block'>Cadastrar Categoria</Link>
+                </li>
+                <li className="hover:text-green-400">
+                  <Link to='/sobre' className="lg:px-5 p-2 block">Sobre</Link>
+                </li>
+              </>
+            )}
+            <li className="hover:text-green-400">
               <Link to='/contato' className="lg:px-5 p-2 block">Contato</Link>
             </li>
             {navbar}

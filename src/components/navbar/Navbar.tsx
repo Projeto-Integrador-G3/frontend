@@ -1,12 +1,50 @@
 import { List, X } from "@phosphor-icons/react";
 
-import { useState } from "react";
-import { Link } from "react-router-dom";
-
+import { ReactNode, useContext, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../contexts/AuthContext";
+import { ToastAlerta } from "../../utils/ToastAlerta";
 
 function Navbar() {
 
+  const navigate = useNavigate();
+
   const [open, setOpen] = useState(false);
+  const { usuario, handleLogout } = useContext(AuthContext)
+
+  function logout() {
+    handleLogout()
+    ToastAlerta('O Usuário foi desconectado com sucesso!', 'sucesso')
+    navigate('/login')
+  }
+
+  let navbar: ReactNode
+
+  if (usuario.token === "") {
+    navbar = (
+      <>
+        <li>
+          <Link to='/login' className="lg:px-5 p-2 block">Login</Link>
+        </li>
+        <li>
+          <Link to='/cadastro' className="lg:px-8 p-2 block rounded-xl bg-green-400 hover:bg-green-300">Cadastre-se</Link>
+        </li>
+      </>
+    )
+  } else {
+    navbar = (
+      <>
+        <li>
+          <Link to='/cadastrarCategoria' className='lg:px-5 p-2 block'>Cadastrar Categoria</Link>
+        </li>
+        <li>
+          <Link to='' onClick={logout} className='lg:px-8 p-2 block rounded-xl hover:text-dodger-blue-500 hover:underline'>Sair</Link>
+        </li>
+      </>
+    )
+
+  }
+
 
   return (
     <header className='bg-green-300 py-4'>
@@ -40,27 +78,17 @@ function Navbar() {
               <Link to='/produtos' className='lg:px-5 p-2 block'>Produtos</Link>
             </li>
             <li>
-              <Link to='/sobre' className="lg:px-5 p-2 block">Sobre</Link>
-            </li>
-            <li>
               <Link to='/categorias' className='lg:px-5 p-2 block'>Categoria</Link>
             </li>
             <li>
-              <Link to='/cadastrarCategoria' className='lg:px-5 p-2 block'>Cadastrar Categoria</Link>
+              <Link to='/sobre' className="lg:px-5 p-2 block">Sobre</Link>
             </li>
             <li>
               <Link to='/contato' className="lg:px-5 p-2 block">Contato</Link>
             </li>
-            <li>
-              <Link to='/login' className="lg:px-5 p-2 block">Login</Link>
-            </li>
-            <li>
-              <Link to='/cadastro' className="lg:px-8 p-2 block rounded-xl bg-green-400 hover:bg-green-300">Cadastre-se</Link>
-            </li>
-
+            {navbar}
           </ul>
-
-        </nav>  
+        </nav>
       </div>
     </header>
   )

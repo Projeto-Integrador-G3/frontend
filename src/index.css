@@ -1,8 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Oswald&family=Prata&family=Spectral:wght@500;600&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Beth+Ellen&family=Oswald&family=Prata&family=Spectral:wght@500;600&display=swap');
-
 
 @layer base {
   html {

@@ -1,16 +1,1 @@
 
-  /* Defina a transição para todos os elementos com a classe "size-full" */
-.size-full {
-    transition: transform 10s ease-in-out; /* Tempo de 0.3 segundos com uma curva de transição suave */
-  }
-  
-  /* Adicione um efeito de escala ao passar o mouse sobre os elementos com a classe "size-full" */
-  .size-full:hover {
-    transform: scale(1.2); /* Aumenta o tamanho em 20% ao passar o mouse */
-  }
-  
-  /* Adicione um atraso ao efeito de escala ao passar o mouse sobre os elementos com a classe "size-full" */
-  .size-full:hover {
-    transition-delay:10s; /* Atraso de 0.5 segundos antes do início da transição */
-  }
-  

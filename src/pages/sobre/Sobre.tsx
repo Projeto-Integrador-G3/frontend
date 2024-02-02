@@ -17,7 +17,7 @@ const CardIntegrante: React.FC<CardIntegrantesProps> = ({ imgUrl, nome, sobre, l
 
     return (
         <div className={`flex ${classDireita} items-center pr-[100px] pb-[100px] pl-[100px]`}>
-            <div className="rounded-full box-border p-2 border-4 border-red-500 transform transition duration-500 hover:scale-150">
+            <div className="rounded-full box-border p-2 border-4 border-green-300 hover:border-green-400 transform transition duration-500 hover:scale-150">
                 <img className='rounded-full max-w-36  object-cover' src={imgUrl} alt={`foto ${nome}`} />
             </div>
 
@@ -79,10 +79,12 @@ function Sobre() {
                                 </p>
 
                             </div>
-                            <div className="w-10 transform transition duration-500 hover:scale-150 text-green-300">
-                                <a href="https://github.com/Projeto-Integrador-G3" target="_blank">
-                                    <GithubLogo size={40} weight='bold' />
-                                </a>
+                            <div className=" flex justify-end text-green-300">
+                                <div className="transform transition duration-500 hover:scale-150">
+                                    <a href="https://github.com/Projeto-Integrador-G3" target="_blank">
+                                        <GithubLogo size={40} weight='bold' />
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

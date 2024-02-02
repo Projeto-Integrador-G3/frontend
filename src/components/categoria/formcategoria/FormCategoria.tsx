@@ -5,6 +5,7 @@ import Categoria from "../../../models/Categoria";
 import { ThreeDots } from "react-loader-spinner";
 import { buscar, atualizar, cadastrar } from "../../../services/Service";
 import { AuthContext } from "../../../contexts/AuthContext";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 
 function FormCategoria() {
@@ -28,7 +29,7 @@ function FormCategoria() {
               });
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                alert('O token expirou, favor logar novamente')
+                ToastAlerta('O token expirou, favor logar novamente', "")
                 handleLogout()
             }
         }
@@ -42,7 +43,7 @@ function FormCategoria() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado');
+            ToastAlerta('Você precisa estar logado', "");
             navigate('/login');
         }
     }, [token]);
@@ -66,27 +67,25 @@ function FormCategoria() {
         if (id !== undefined) {
             try {
                 await atualizar(`/categorias`, categoria, setCategoria, { headers: { 'Authorization': token } });
-                alert('A categoria foi atualizada com sucesso!')
+                ToastAlerta('A categoria foi atualizada com sucesso!', "sucesso")
             } catch (error: any) {
-                alert('Erro ao atualizar a categoria.')
                 if (error.toString().includes('403')) {
-                    alert('O Token Expirou!')
+                    ToastAlerta('O token expirou, favor logar novamente!', "")
                     handleLogout();
                 } else {
-                    alert('Erro ao atualizar a categoria.')
+                    ToastAlerta('Erro ao atualizar a Categoria.', "erro")
                 }
             }
         } else {
             try {
                 await cadastrar(`/categorias`, categoria, setCategoria, { headers: { 'Authorization': token } })
-                alert('A categoria foi cadastrada com sucesso!')
+                ToastAlerta('A categoria foi cadastrada com sucesso!', "sucesso")
             } catch (error: any) {
-                alert('Erro ao cadastrar a categoria.')
                 if (error.toString().includes('403')) {
-                    alert('O Token Expirou!')
+                    ToastAlerta('O token expirou, favor logar novamente!', "")
                     handleLogout();
                 } else {
-                    alert('Erro ao cadastrar a categoria.')
+                    ToastAlerta('Erro ao cadastrar a categoria.', "erro")
                 }
 
             }
@@ -97,7 +96,7 @@ function FormCategoria() {
     }
 
     return (
-        <div className="container flex flex-col items-center justify-center mx-auto">
+        <div className="container flex flex-col items-center justify-center mx-auto h-[80vh]">
             <h1 className="text-4xl text-center my-8  font-bold">
                 {id === undefined ? 'Cadastrar Categoria' : 'Editar Categoria'}
             </h1>
@@ -109,7 +108,7 @@ function FormCategoria() {
                         type="text"
                         placeholder="Descreva aqui sua categoria"
                         name='descricao'
-                        className="border-2 border-slate-400 rounded p-2"
+                        className="border-2 border-green-300 rounded p-2"
                         value={categoria.descricao}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                     />
@@ -118,13 +117,13 @@ function FormCategoria() {
                         type="text"
                         placeholder="Descreva aqui sua categoria"
                         name='tipo'
-                        className="border-2 border-slate-400 rounded p-2"
+                        className="border-2 border-green-300 rounded p-2"
                         value={categoria.tipo}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                     />
                 </div>
                 <button
-                    className="rounded font-bold bg-slate-400 hover:bg-slate-600
+                    className="rounded font-bold text-white bg-green-300 hover:bg-green-400
                      w-1/2 py-2 mx-auto flex justify-center"
                     type="submit">
 

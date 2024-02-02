@@ -42,7 +42,7 @@ function Login() {
             id="usuario"
             name="usuario"
             placeholder="Usuario"
-            className="border-2 border-slate-700 rounded p-2"
+            className="border-2 border-green-300 rounded p-2"
             value={usuarioLogin.usuario}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
 
@@ -55,12 +55,12 @@ function Login() {
             id="senha"
             name="senha"
             placeholder="Senha"
-            className="border-2 border-slate-700 rounded p-2"
+            className="border-2 border-green-300 rounded p-2"
             value={usuarioLogin.senha}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
           />
         </div>
-        <button type='submit' className="rounded bg-gray-600 hover:bg-gray-400 text-white w-1/2 py-2 flex justify-center">
+        <button type='submit' className="rounded bg-green-300 hover:bg-green-400 text-white w-1/2 py-2 flex justify-center">
           {isLoading ? <RotatingLines
             strokeColor="white"
             strokeWidth="5"
@@ -76,7 +76,7 @@ function Login() {
 
         <p>
           Ainda não tem uma conta?
-          <Link to="/cadastro" className="text-gray-600 hover:underline">
+          <Link to="/cadastro" className="text-green-400 hover:underline">
             Cadastre-se
           </Link>
         </p>

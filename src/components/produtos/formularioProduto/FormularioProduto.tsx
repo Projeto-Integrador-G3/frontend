@@ -72,7 +72,7 @@ function FormularioProduto() {
 
     useEffect(() => {
         if (token === '') {
-          ToastAlerta('Você precisa estar logado', 'erro')
+          ToastAlerta('Você precisa estar logado', '')
           navigate('/login')
         }
       }, [token])
@@ -152,7 +152,7 @@ function FormularioProduto() {
                         placeholder="Nome"
                         name="nome"
                         required
-                        className="border-2 border-slate-700 rounded p-2"
+                        className="border-2 border-green-300 rounded p-2"
                     />
                 </div>
                 <div className="flex flex-col gap-2">
@@ -164,7 +164,7 @@ function FormularioProduto() {
                         placeholder="Preço"
                         name="preco"
                         required
-                        className="border-2 border-slate-700 rounded p-2"
+                        className="border-2 border-green-300 rounded p-2"
                     />
                 </div>
                 <div className="flex flex-col gap-2">
@@ -176,12 +176,12 @@ function FormularioProduto() {
                         placeholder="Foto"
                         name="foto"
                         required
-                        className="border-2 border-slate-700 rounded p-2"
+                        className="border-2 border-green-300 rounded p-2"
                     />
                 </div>
                 <div className="flex flex-col gap-2">
                     <p>Categoria da produto</p>
-                    <select name="categoria" id="categoria" className='border p-2 border-slate-800 rounded' onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)} >
+                    <select name="categoria" id="categoria" className='border p-2 border-green-300 rounded' onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)} >
                         <option value="" selected disabled>Selecione um categoria</option>
                         {categorias.map((categoria) => (
                             <>
@@ -191,7 +191,7 @@ function FormularioProduto() {
 
                     </select>
                 </div>
-                <button disabled={carregandoCategoria} type='submit' className='rounded disabled:bg-slate-200 bg-green-700 hover:bg-green-800 text-white font-bold w-1/2 mx-auto flex py-2 justify-center'>
+                <button disabled={carregandoCategoria} type='submit' className='rounded disabled:bg-green-200 bg-green-300 hover:bg-green-400 text-white font-bold w-1/2 mx-auto flex py-2 justify-center'>
 
                     {isLoading ? <RotatingLines
                         strokeColor="white"

@@ -5,6 +5,7 @@ import Categoria from "../../../models/Categoria";
 import {  ThreeDots } from "react-loader-spinner";
 import { buscar, deletar } from "../../../services/Service";
 import { AuthContext } from "../../../contexts/AuthContext";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 
 
@@ -27,7 +28,7 @@ function DeletarCategoria() {
             await buscar(`/categorias/${id}`, setCategoria,{ headers:{Authorization: token,}})
         } catch (error: any) {
             if (error.toString().includes('403')) {
-             alert('O Token Expirou!')
+             ToastAlerta('O token expirou, favor logar novamente!', "")
             }
         }
     }
@@ -55,13 +56,13 @@ function DeletarCategoria() {
 
         try {
             await deletar(`/categorias/${id}`,{ headers:{Authorization: token,}})
-            alert('A categoria foi excluída com sucesso!')
+            ToastAlerta('A categoria foi excluída com sucesso!', "sucesso")
         } catch (error: any) {
             if (error.toString().includes('403')) {
-                alert('O Token Expirou!')
+                ToastAlerta('O token expirou, favor logar novamente!', "")
                 handleLogout();
             } else {
-               alert('Erro ao excluir a categoria.')
+               ToastAlerta('Erro ao excluir a categoria.', "erro")
             }
         }
 
@@ -76,20 +77,19 @@ function DeletarCategoria() {
                 Você tem certeza de que deseja apagar a categoria a seguir?</p>
             <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
                 <header
-                    className='py-2 px-6 bg-slate-600 text-white font-bold text-2xl'>
+                    className='py-2 px-6 bg-green-400 text-white font-bold text-2xl'>
                     Categoria
                 </header>
                 <p className='p-8 text-3xl bg-slate-00 h-full'>{categoria.descricao}</p>
                 <div className="flex">
                     <button
-                        className='text-slate-100 bg-slate-400 hover:bg-slate-700 w-full py-2'
+                        className='text-slate-100 bg-red-400 hover:bg-red-700 w-full py-2'
                         onClick={retornar}>
                         Não
                     </button>
                     <button
-                        className='w-full font-bold bg-red-400 
-                                   hover:bg-red-700 flex items-center justify-center'
-                                   onClick={deletarCategoria}>
+                        className='w-full text-white bg-green-300 hover:bg-green-400 font-bold  flex items-center justify-center'
+                        onClick={deletarCategoria}>
                          {isLoading ?
                         <ThreeDots
                         visible={true}

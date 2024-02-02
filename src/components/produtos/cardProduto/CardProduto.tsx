@@ -7,9 +7,9 @@ interface CardProdutoProps {
 
 function CardProduto({post}: CardProdutoProps) {
   return (
-    <div className='border-slate-900 border flex flex-col rounded overflow-hidden justify-between'>
+    <div className='border-green-400 border flex flex-col rounded overflow-hidden justify-between'>
       <div>
-        <div className="flex w-full bg-green-700 text-white py-2 px-4 items-center gap-4">
+        <div className="flex w-full bg-green-400 text-white py-2 px-4 items-center gap-4">
           <h3 className='text-lg font-bold text-center uppercase '>{post.nome}</h3>
         </div>
         <div className='p-4'>
@@ -20,7 +20,7 @@ function CardProduto({post}: CardProdutoProps) {
           </div>
       </div>
       <div className="flex">
-      <Link to={`/editarProduto/${post.id}`} className='w-full text-white bg-green-700 hover:bg-green-900 flex items-center justify-center py-2'>
+      <Link to={`/editarProduto/${post.id}`} className='w-full text-white bg-green-400 hover:bg-green-300 flex items-center justify-center py-2'>
           <button>Editar</button>
         </Link>
         <Link to={`/deletarProduto/${post.id}`} className='text-white bg-red-400 hover:bg-red-700 w-full flex items-center justify-center'>

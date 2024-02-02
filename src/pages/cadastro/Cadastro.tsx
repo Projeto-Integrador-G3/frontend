@@ -5,6 +5,7 @@ import { cadastrarUsuario } from '../../services/Service';
 import { useNavigate } from 'react-router-dom';
 import Usuario from '../../models/Usuario';
 import { RotatingLines } from 'react-loader-spinner';
+import { ToastAlerta } from '../../utils/ToastAlerta';
 
 function Cadastro() {
 
@@ -50,14 +51,14 @@ function Cadastro() {
 
             try {
                 await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario)
-                alert('Usuário cadastrado com sucesso')
+                ToastAlerta('Usuário cadastrado com sucesso', "sucesso")
 
             } catch (error) {
-                alert('Erro ao cadastrar o Usuário')
+                ToastAlerta('Erro ao cadastrar o Usuário', "erro")
             }
 
         } else {
-            alert('Erro ao cadastrar o Usuário')
+            ToastAlerta('Erro ao cadastrar o Usuário', "erro")
             setUsuario({ ...usuario, senha: "" })
             setConfirmaSenha("")
         }
@@ -81,7 +82,7 @@ function Cadastro() {
                             id="nome"
                             name="nome"
                             placeholder="Nome"
-                            className="border-2 border-slate-700 rounded p-2"
+                            className="border-2 border-green-300 rounded p-2"
                             value={usuario.nome}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
@@ -93,7 +94,7 @@ function Cadastro() {
                             id="usuario"
                             name="usuario"
                             placeholder="Usuario"
-                            className="border-2 border-slate-700 rounded p-2"
+                            className="border-2 border-green-300 rounded p-2"
                             value={usuario.usuario}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
                     </div>
@@ -104,7 +105,7 @@ function Cadastro() {
                             id="foto"
                             name="foto"
                             placeholder="Foto"
-                            className="border-2 border-slate-700 rounded p-2"
+                            className="border-2 border-green-300 rounded p-2"
                             value={usuario.foto}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />
                     </div>
@@ -115,7 +116,7 @@ function Cadastro() {
                             id="senha"
                             name="senha"
                             placeholder="Senha"
-                            className="border-2 border-slate-700 rounded p-2"
+                            className="border-2 border-green-300 rounded p-2"
                             value={usuario.senha}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         />
@@ -127,7 +128,7 @@ function Cadastro() {
                             id="confirmarSenha"
                             name="confirmarSenha"
                             placeholder="Confirmar Senha"
-                            className="border-2 border-slate-700 rounded p-2"
+                            className="border-2 border-green-300 rounded p-2"
                             value={confirmaSenha}
                             onChange={(e: ChangeEvent<HTMLInputElement>) => handleConfirmarSenha(e)}
                         />
@@ -139,7 +140,7 @@ function Cadastro() {
                             Cancelar
                         </button>
                         <button
-                            className='rounded bg-gray-600 hover:bg-gray-400 text-white w-1/2 py-2 flex justify-center'
+                            className='rounded bg-green-300 hover:bg-green-400 text-white w-1/2 py-2 flex justify-center'
                             type='submit'>
                             {isLoading ? <RotatingLines
                                 strokeColor="white"

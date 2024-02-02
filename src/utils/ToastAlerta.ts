@@ -1,57 +1,30 @@
-import { toast } from 'react-toastify';
+import { toast, ToastOptions, ToastPosition } from 'react-toastify';
 
 export function ToastAlerta(mensagem: string, tipo: string) {
+
+  let ToastOptions: ToastOptions<ToastPosition> = {
+    position: 'top-right',
+    autoClose: 2000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: false,
+    theme: 'colored',
+    progress: undefined,
+  };
+
   switch (tipo) {
     case 'sucesso':
-      toast.success(mensagem, {
-        position: 'top-right',
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        theme: 'colored',
-        progress: undefined,
-      });
-      break;
-
-    case 'info':
-      toast.info(mensagem, {
-        position: 'top-right',
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        theme: 'colored',
-        progress: undefined,
-      });
+      toast.success(mensagem, ToastOptions);
       break;
 
     case 'erro':
-      toast.error(mensagem, {
-        position: 'top-right',
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        theme: 'colored',
-        progress: undefined,
-      });
+      toast.error(mensagem, ToastOptions);
       break;
 
     default:
-      toast.info(mensagem, {
-        position: 'top-right',
-        autoClose: 2000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: false,
-        draggable: false,
-        theme: 'colored',
-        progress: undefined,
-      });
+      toast.info(mensagem, ToastOptions);
       break;
+
   }
 }

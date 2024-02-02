@@ -24,7 +24,7 @@ const CardIntegrante: React.FC<CardIntegrantesProps> = ({ imgUrl, nome, sobre, l
 
             <div className='box-border px-8 text-justify flex flex-wrap items-end'>
 
-                <h2 className="text-4xl font-bold p-2">
+                <h2 className="text-4xl font-bold p-2 hover:text-green-300">
                     {nome}
                 </h2>
 

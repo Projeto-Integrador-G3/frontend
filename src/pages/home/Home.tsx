@@ -1,5 +1,6 @@
 import Carrossel from "../../components/carrossel/Carrossel";
 import ListaProdutos from "../../components/produtos/listaProdutos/ListaProdutos";
+import ModalProduto from "../../components/produtos/modalProduto/ModalProduto";
 
 interface CardProdutoProps {
     imgUrl: string;
@@ -24,61 +25,8 @@ function Home() {
     return (
         <>
             <Carrossel />
-
-            <div className="flex justify-center w-full my-4">
-                <div className="flex flex-col h-full">
-
-                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 p-[50px]">
-                        <CardProduto
-                            imgUrl={"https://propetz.vtexassets.com/arquivos/ids/156866/CAMISA_UNISSEX_SLIM_PRETA_COSTAS.png?v=638103383796370000"}
-                            nomeProduto={"batatinha"}
-                            descricao={"123"}
-                        />
-                        <CardProduto
-                            imgUrl={"https://propetz.vtexassets.com/arquivos/ids/156866/CAMISA_UNISSEX_SLIM_PRETA_COSTAS.png?v=638103383796370000"}
-                            nomeProduto={"batatinha"}
-                            descricao={"123"}
-                        />
-                        <CardProduto
-                            imgUrl={"https://propetz.vtexassets.com/arquivos/ids/156866/CAMISA_UNISSEX_SLIM_PRETA_COSTAS.png?v=638103383796370000"}
-                            nomeProduto={"batatinha"}
-                            descricao={"123"}
-                        />
-                        <CardProduto
-                            imgUrl={"https://propetz.vtexassets.com/arquivos/ids/156866/CAMISA_UNISSEX_SLIM_PRETA_COSTAS.png?v=638103383796370000"}
-                            nomeProduto={"batatinha"}
-                            descricao={"123"}
-                        />
-                        <CardProduto
-                            imgUrl={"https://propetz.vtexassets.com/arquivos/ids/156866/CAMISA_UNISSEX_SLIM_PRETA_COSTAS.png?v=638103383796370000"}
-                            nomeProduto={"batatinha"}
-                            descricao={"123"}
-                        />
-                        <CardProduto
-                            imgUrl={"https://propetz.vtexassets.com/arquivos/ids/156866/CAMISA_UNISSEX_SLIM_PRETA_COSTAS.png?v=638103383796370000"}
-                            nomeProduto={"batatinha"}
-                            descricao={"123"}
-                        />
-                        <CardProduto
-                            imgUrl={"https://propetz.vtexassets.com/arquivos/ids/156866/CAMISA_UNISSEX_SLIM_PRETA_COSTAS.png?v=638103383796370000"}
-                            nomeProduto={"batatinha"}
-                            descricao={"123"}
-                        />
-                        <CardProduto
-                            imgUrl={"https://propetz.vtexassets.com/arquivos/ids/156866/CAMISA_UNISSEX_SLIM_PRETA_COSTAS.png?v=638103383796370000"}
-                            nomeProduto={"batatinha"}
-                            descricao={"123"}
-                        />
-                        <CardProduto
-                            imgUrl={"https://propetz.vtexassets.com/arquivos/ids/156866/CAMISA_UNISSEX_SLIM_PRETA_COSTAS.png?v=638103383796370000"}
-                            nomeProduto={"batatinha"}
-                            descricao={"123"}
-                        />
-                    </div>
-                </div>
-            </div>
-
-            {<ListaProdutos />}
+            <ListaProdutos />
+            <ModalProduto />
         </>
 
     )

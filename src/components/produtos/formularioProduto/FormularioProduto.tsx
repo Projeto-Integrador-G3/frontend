@@ -168,7 +168,7 @@ function FormularioProduto() {
                     />
                 </div>
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="preco">Foto do produto</label>
+                    <label htmlFor="foto">Foto do produto</label>
                     <input
                         value={produto.foto}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}

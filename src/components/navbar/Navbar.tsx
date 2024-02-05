@@ -38,7 +38,7 @@ function Navbar() {
           <Link to='' onClick={logout} className='lg:px-8 p-2 block rounded-xl hover:text-green-400 hover:underline'>Sair</Link>
         </li>
         <li>
-          <Link to='/cart' className="gap-4"><ShoppingCart size={28} weight='fill' /></Link>
+          <Link to='/cart' className="gap-4 hover:text-green-400"><ShoppingCart size={28} weight='fill' /></Link>
         </li>
       </>
     );

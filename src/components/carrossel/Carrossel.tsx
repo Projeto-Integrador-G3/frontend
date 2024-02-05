@@ -33,7 +33,7 @@ function Carrossel() {
 
         <SwiperSlide>
           <img className="swiper-slide-img"
-            src='https://i.imgur.com/3nozuZ7.png'
+            src='https://ik.imagekit.io/zcioxdl6o/Banner_para_site.png_ex=65d38f16&is=65c11a16&hm=f4b3999cb1ff7b5787a793f2e1f3ddc7b27b7a29480e3fc6eef2c4703684f5cb&?updatedAt=1707153950424'
           />
         </SwiperSlide>
         <SwiperSlide>

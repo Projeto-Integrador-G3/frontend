@@ -173,7 +173,7 @@ function Sobre() {
 
                             imgUrl={"https://ik.imagekit.io/zcioxdl6o/matheus.png?updatedAt=1706885687644"}
                             nome={"Matheus Soares Rodrigues"}
-                            sobre={`Sobre mim, sou um estudante apaixonado por Tecnologia e Segurança da Informação na FATEC São Caetano do Sul.
+                            sobre={`Sou um estudante apaixonado por Tecnologia e Segurança da Informação na FATEC São Caetano do Sul.
                         Minha afinidade com o campo da Tecnologia vem desde antes de ingressar nessa área.
                         Durante meu tempo no curso de mecânica de usinagem no Senai, tive a oportunidade de interagir com tornos CNC,
                         o que despertou meu interesse pela programação e pela eficiência proporcionada pela tecnologia.`}
@@ -190,7 +190,7 @@ function Sobre() {
                         CSS3, JavaScript e TypeScript. Conhecimento ágil em Scrum. Apaixonada por
                         crescimento pessoal, valorizando detalhes, trabalho em equipe e comunicação eficaz.
                         Competências em Git, GitHub, React.js e Programação Orientada a Objetos (POO) completam
-                        meu perfil para projetos desafiadores. Meu endereço de email caso tenham interesse ou dúvidas: sthefanyssbastos@hotmail.com
+                        meu perfil para projetos desafiadores. Meu endereço de email caso tenham interesse ou dúvidas: sthefanyssbastos@hotmail.com.
                         Espero você!`}
                             linkedinUrl={"https://www.linkedin.com/in/sthefany-sousa-da-silva-bastos-/"}
                             gitHubUrl={"https://github.com/SthefayBastos"}

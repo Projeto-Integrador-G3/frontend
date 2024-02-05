@@ -1,3 +1,4 @@
+import Carrossel from "../../components/carrossel/Carrossel";
 import ListaProdutos from "../../components/produtos/listaProdutos/ListaProdutos";
 
 interface CardProdutoProps {
@@ -22,26 +23,7 @@ const CardProduto: React.FC<CardProdutoProps> = ({ imgUrl, nomeProduto, descrica
 function Home() {
     return (
         <>
-
-
-            <div className='flex flex-row-reverse items-center my-4 mr-48'>
-                <img className='rounded-full size-[10rem]'
-                    src="https://ik.imagekit.io/lcjdr9dex/Uni.png?updatedAt=1705675506304" alt="Logo" />
-
-                <div className='box-border px-8 text-justify flex flex-wrap items-end'>
-
-                    <h2
-                        className="text-4xl font-bold p-2">
-                        UNI - O que uso não define meu gênero.
-                    </h2>
-
-                    <p className="text-4xl font-bold p-2">
-                        Moda sem gênero
-                    </p>
-
-                </div>
-            </div>
-
+            <Carrossel />
 
             <div className="flex justify-center w-full my-4">
                 <div className="flex flex-col h-full">

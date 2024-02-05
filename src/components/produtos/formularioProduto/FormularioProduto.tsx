@@ -144,7 +144,7 @@ function FormularioProduto() {
 
             <form onSubmit={gerarNovaProduto} className="flex flex-col w-1/2 gap-4">
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="nome">Nome do produto</label>
+                    <label htmlFor="nome">Nome</label>
                     <input
                         value={produto.nome}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -156,7 +156,19 @@ function FormularioProduto() {
                     />
                 </div>
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="preco">Preço do produto</label>
+                    <label htmlFor="descricao">Descrição</label>
+                    <input
+                        value={produto.descricao}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                        type="text"
+                        placeholder="Descrição"
+                        name="descricao"
+                        required
+                        className="border-2 border-green-300 rounded p-2"
+                    />
+                </div>
+                <div className="flex flex-col gap-2">
+                    <label htmlFor="preco">Preço</label>
                     <input
                         value={produto.preco}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -168,13 +180,37 @@ function FormularioProduto() {
                     />
                 </div>
                 <div className="flex flex-col gap-2">
-                    <label htmlFor="foto">Foto do produto</label>
+                    <label htmlFor="foto">Foto</label>
                     <input
                         value={produto.foto}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                         type="text"
                         placeholder="Foto"
                         name="foto"
+                        required
+                        className="border-2 border-green-300 rounded p-2"
+                    />
+                </div>
+                <div className="flex flex-col gap-2">
+                    <label htmlFor="cor">Cor</label>
+                    <input
+                        value={produto.cor}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                        type="text"
+                        placeholder="Cor"
+                        name="cor"
+                        required
+                        className="border-2 border-green-300 rounded p-2"
+                    />
+                </div>
+                <div className="flex flex-col gap-2">
+                    <label htmlFor="tamanho">Tamanho</label>
+                    <input
+                        value={produto.tamanho}
+                        onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                        type="text"
+                        placeholder="Tamanho"
+                        name="tamanho"
                         required
                         className="border-2 border-green-300 rounded p-2"
                     />

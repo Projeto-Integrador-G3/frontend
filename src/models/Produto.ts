@@ -7,6 +7,6 @@ export default interface Produto {
     preco: number;
     foto: string;
     cor:string;
-    tamanho: number;
+    tamanho: string;
     categoria?: Categoria | null;
 }

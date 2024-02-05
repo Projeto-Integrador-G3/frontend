@@ -17,34 +17,38 @@ import 'react-toastify/dist/ReactToastify.css'
 import FormularioProduto from './components/produtos/formularioProduto/FormularioProduto'
 import DeletarProduto from './components/produtos/deletarProduto/DeletarProduto'
 import ListaProdutos from './components/produtos/listaProdutos/ListaProdutos'
+import Cart from './components/cart/Cart'
+import { CartProvider } from './contexts/CartContext'
 
 function App() {
 
   return (
     <>
-    <AuthProvider>
-      <BrowserRouter>
-      <ToastContainer/>
-        <Navbar />
-        <div className='min-h-[80vh]'>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/categorias" element={<ListaCategorias />} />
-            <Route path="/cadastrarCategoria" element={<FormCategoria />} />
-            <Route path="/editarCategoria/:id" element={<FormCategoria />} />
-            <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
-            <Route path="/contato" element={<Contato />} />
-            <Route path="/cadastro" element={<Cadastro />} />
-            <Route path="/sobre" element={<Sobre />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/produtos" element={<ListaProdutos />} />
-            <Route path="/cadastroProduto" element={<FormularioProduto />} />
-            <Route path="/editarProduto/:id" element={<FormularioProduto />} />
-            <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
-          </Routes>
-        </div>
-        <Footer />
-      </BrowserRouter>
+      <AuthProvider>
+        <BrowserRouter>
+          <ToastContainer />
+          <CartProvider children={undefined}/>
+            <Navbar />
+            <div className='min-h-[80vh]'>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/categorias" element={<ListaCategorias />} />
+                <Route path="/cadastrarCategoria" element={<FormCategoria />} />
+                <Route path="/editarCategoria/:id" element={<FormCategoria />} />
+                <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
+                <Route path="/contato" element={<Contato />} />
+                <Route path="/cadastro" element={<Cadastro />} />
+                <Route path="/sobre" element={<Sobre />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/produtos" element={<ListaProdutos />} />
+                <Route path="/cadastroProduto" element={<FormularioProduto />} />
+                <Route path="/editarProduto/:id" element={<FormularioProduto />} />
+                <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
+                <Route path="/cart" element={<Cart />} />
+              </Routes>
+            </div>
+            <Footer />
+        </BrowserRouter>
       </AuthProvider>
 
     </>

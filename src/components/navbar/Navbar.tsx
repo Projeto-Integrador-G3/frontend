@@ -1,4 +1,4 @@
-import { List, X } from "@phosphor-icons/react";
+import { List, ShoppingCart, X } from "@phosphor-icons/react";
 
 import { ReactNode, useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -29,6 +29,7 @@ function Navbar() {
         <li>
           <Link to='/cadastro' className="lg:px-8 p-2 block rounded-xl bg-green-400 hover:bg-green-300">Cadastre-se</Link>
         </li>
+        <Link to='/cart'><ShoppingCart size={32} weight='bold' /></Link>
       </>
     )
   } else {

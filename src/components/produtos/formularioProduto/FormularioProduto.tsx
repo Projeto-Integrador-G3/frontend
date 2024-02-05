@@ -33,7 +33,7 @@ function FormularioProduto() {
         preco: 0,
         foto: '',
         cor:'',
-        tamanho: 0,
+        tamanho: '',
         categoria: null,
     });
 

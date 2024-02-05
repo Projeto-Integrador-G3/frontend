@@ -24,10 +24,10 @@ function App() {
 
   return (
     <>
+    <CartProvider>
       <AuthProvider>
         <BrowserRouter>
           <ToastContainer />
-          <CartProvider children={undefined}/>
             <Navbar />
             <div className='min-h-[80vh]'>
               <Routes>
@@ -50,7 +50,7 @@ function App() {
             <Footer />
         </BrowserRouter>
       </AuthProvider>
-
+      </CartProvider>
     </>
   )
 }

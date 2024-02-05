@@ -29,16 +29,19 @@ function Navbar() {
         <li>
           <Link to='/cadastro' className="lg:px-8 p-2 block rounded-xl bg-green-400 hover:bg-green-300">Cadastre-se</Link>
         </li>
-        <Link to='/cart'><ShoppingCart size={32} weight='bold' /></Link>
       </>
     )
   } else {
     navbar = (
-      <li>
-        <Link to='' onClick={logout} className='lg:px-8 p-2 block rounded-xl hover:text-green-400 hover:underline'>Sair</Link>
-      </li>
-    )
-
+      <>
+        <li>
+          <Link to='' onClick={logout} className='lg:px-8 p-2 block rounded-xl hover:text-green-400 hover:underline'>Sair</Link>
+        </li>
+        <li>
+          <Link to='/cart' className="gap-4"><ShoppingCart size={28} weight='fill' /></Link>
+        </li>
+      </>
+    );
   }
 
 
@@ -92,7 +95,9 @@ function Navbar() {
             )}
             <li className="hover:text-green-400">
               <Link to='/contato' className="lg:px-5 p-2 block">Contato</Link>
+
             </li>
+
             {navbar}
           </ul>
         </nav>

@@ -32,7 +32,7 @@ function Cart() {
                 }
             </div>
 
-            <button className="rounded text-slate-100 bg-slate-400 
+            <button className="rounded text-white bg-green-400 
           hover:bg-slate-800 w-1/4 py-2 mx-auto flex justify-center"
                 type="submit" 
                 disabled={items.length === 0 ? true : false}

@@ -9,7 +9,8 @@ export default {
         'white': '#FFF',
         'green-200' : '#a1a79f',
         'green-300' : '#858873',
-        'green-400': '#3e4035'
+        'green-400': '#3e4035',
+        'avocado-500' : '#818359'
       },
       fontFamily: {
         prata: ['Prata', 'serif',],

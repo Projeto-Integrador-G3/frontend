@@ -1,6 +1,5 @@
 
 import { ChangeEvent, FormEvent, useEffect, useState } from 'react';
-import './Cadastro.css';
 import { cadastrarUsuario } from '../../services/Service';
 import { useNavigate } from 'react-router-dom';
 import Usuario from '../../models/Usuario';
@@ -142,7 +141,8 @@ function Cadastro() {
                         <button
                             className='rounded bg-green-300 hover:bg-green-400 text-white w-1/2 py-2 flex justify-center'
                             type='submit'>
-                            {isLoading ? <RotatingLines
+                            {isLoading ? 
+                            <RotatingLines
                                 strokeColor="white"
                                 strokeWidth="5"
                                 animationDuration="0.75"

@@ -57,7 +57,7 @@ function Contato() {
                         rows={3}
                         className="form-input text-green-400 border-2 rounded w-full p-2"
                     />
-                    <div className="flex flex-center">
+                    <div className="flex justify-center">
                         <button type='submit' className="rounded mt-4 bg-green-300 hover:bg-green-400 text-white w-1/2 py-2 flex justify-center">
                             <span>Enviar</span>
                         </button>

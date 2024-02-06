@@ -1,6 +1,5 @@
 import { GithubLogo, LinkedinLogo } from "@phosphor-icons/react";
 
-
 import React from 'react';
 interface CardIntegrantesProps {
     imgUrl: string;
@@ -13,26 +12,26 @@ interface CardIntegrantesProps {
 
 const CardIntegrante: React.FC<CardIntegrantesProps> = ({ imgUrl, nome, sobre, linkedinUrl, gitHubUrl, direita }) => {
 
-    const classDireita = direita ? "flex-row" : "flex-row-reverse"
+    const classDireita = direita ? "md:flex-row" : "md:flex-row-reverse"
 
     return (
-        <div className={`flex ${classDireita} items-center pr-[100px] pb-[100px] pl-[100px]`}>
+        <div className={`flex ${classDireita} flex-col items-center px-6 md:px-[100px] pb-6 md:pb-[100px]`}>
             <div className="rounded-full box-border p-2 border-4 border-green-300 hover:border-green-400 transform transition duration-500 hover:scale-150">
-                <img className='rounded-full max-w-36  object-cover' src={imgUrl} alt={`foto ${nome}`} />
+                <img className='rounded-full max-w-36 object-cover' src={imgUrl} alt={`foto ${nome}`} />
             </div>
 
 
-            <div className='box-border px-8 text-justify flex flex-wrap items-end'>
+            <div className='box-border py-4 md:px-8 text-justify flex flex-wrap items-end'>
 
-                <h2 className="text-4xl font-bold p-2 hover:text-green-300">
+                <h2 className="text-3xl text-center md:text-auto md:text-4xl font-bold p-2 hover:text-green-300">
                     {nome}
                 </h2>
 
-                <p className='p-2'>
+                <p className='md:p-2'>
                     {sobre}
                 </p>
 
-                <div className="flex gap-x-5">
+                <div className="flex items-end w-[100%] justify-end md:w-[auto] md:justify-auto gap-x-5">
                     <a className="transform transition duration-500 hover:scale-150 text-green-400" href={linkedinUrl} target="_blank">
                         <LinkedinLogo size={40} weight='bold' />
                     </a>
@@ -51,27 +50,29 @@ function Sobre() {
     return (
         <>
             <div className='min-h-screen '>
-                <div className='pr-[100px] pt-[100px] pl-[100px]'>
-                    <div className='flex flex-row items-center'>
-                        <img className='size-[26rem]' src="https://ik.imagekit.io/4zbah2xtl/img/uni500x500-removebg-preview.png?updatedAt=1707232264334"
+                <div className='px-8 md:px-[100px] md:pt-[100px]'>
+                    <div className='flex flex-col md:flex-row items-center'>
+                        <img className='md:size-[34rem]' src="https://ik.imagekit.io/4zbah2xtl/img/uni500x500-removebg-preview.png?updatedAt=1707232264334"
                             alt="logo Uni" />
 
-                        <div className='box-border px-8 text-justify items-end'>
+                        <div className='box-border md:px-8 text-justify items-end'>
                             <div>
                                 <h1 className="
-                                text-5xl
+                                text-4xl
+                                md:text-5xl
                                 font-bold
+                                text-center
                                 p-2">
                                     Sobre o projeto
                                 </h1>
 
-                                <p className='p-2'>
+                                <p className='p-0 md:p-2'>
                                     O problema social abordado no projeto está relacionado à falta de igualdade de gênero, com ênfase na discriminação nas indústrias de moda, conforme preconizado pelo ODS 5 - Igualdade de Gênero.
                                     O texto destaca barreiras, como a "taxa rosa" em produtos femininos, padrões binários de modelagem em roupas e tamanhos padronizados.
                                     A falta de conscientização da indústria da moda sobre a diversidade de gênero e corpos resulta em uma oferta deficiente de roupas, excluindo pessoas que fogem dos padrões normativos ou cobrando valores acima do mercado.
                                 </p>
 
-                                <p className='p-2'>
+                                <p className='p-0 md:p-2'>
                                     A solução escolhida foi criar um E-Commerce, motivada pela escassez de lojas que atendem diversos públicos sem distinção de preço.
                                     O projeto, intitulado UNI - O que uso não define meu gênero, visa a moda sem gênero, eliminando distinções de preços e oferecendo variedade em modelagens para atender a todos os corpos e gostos.
                                     A aplicação busca contribuir para a solução do problema social, proporcionando atendimento amplo a segmentos sociais afetados pela desigualdade no mercado industrial,
@@ -92,9 +93,12 @@ function Sobre() {
 
                 <div>
                     <h1 className="
-                        text-5xl
+                        text-3xl
+                        md:text-5xl
                         font-bold
-                        p-[100px]
+                        md:p-[100px]
+                        pb-9
+                        md:pb-[auto]
                         text-center">
                         Sobre nós
                     </h1>

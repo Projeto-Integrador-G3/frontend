@@ -25,7 +25,7 @@ function CardProduto({ produto }: CardProdutoProps) {
           <img src={produto.foto} className='mt-1 h-40 max-w-75 mx-auto'
             alt={produto.nome} />
 
-           <h3 className='text-right font-bold uppercase p-5'>
+           <h3 className='text-right font-bold uppercase md:p-5'>
             {Intl.NumberFormat('pt-BR', {
               style: 'currency',
               currency: 'BRL'

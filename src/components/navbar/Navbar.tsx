@@ -48,7 +48,7 @@ function Navbar() {
   return (
     <header className='bg-green-300 py-4'>
       <div className='flex items-center justify-between xl:max-w-9xl xl:mx-auto px-[4%] flex-wrap w-full text-white'>
-        <a href='/' className="text-2xl font-bold">Uni</a>
+        <Link to='/' className="text-2xl font-bold">Uni</Link>
         {
           open ?
 

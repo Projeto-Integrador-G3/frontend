@@ -1,30 +1,79 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Projeto Integrador Generation Brasil
 
-Currently, two official plugins are available:
+## Grupo 3 - Turma 68
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+O Problema Social
 
-## Expanding the ESLint configuration
+ODS 5 - Igualdade de Gênero
+Meta: 5.1 - Acabar com todas as formas de discriminação contra todas as mulheres e meninas em toda partes;
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Barreira de preço nos produtos destinados às mulheres (faixa rosa); 
+“Padrão” de modelagem binário nas roupas; 
+“Padrão” de modelagem de tamanho. 
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+![Logo](https://ik.imagekit.io/zcioxdl6o/uni_logo-removebg-preview.png_ex=65cd401f&is=65bacb1f&hm=8c75124bbb7d8e9bc88eefd12f59b105fb8aa653bae529a65576903ef82c1b10&?updatedAt=1706882280788)
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Identificando esses problemas e decidimos desenvolver um e-commerce voltado para o ramo de vestuário sem gênero, sem distinção de preços nas peças e possibilitando mais variedades.
+
+## Stack utilizada
+
+**Back-end:** Java Spring boot, MYSQL
+
+**Front-end:** React, TailwindCSS, TypeScript 
+
+
+
+
+## Aprendizados
+
+Desenvolver esse projeto em equipe do zero ao deploy
+
+
+## Roadmap
+
+- Melhorar o suporte de navegadores
+
+- Adicionar mais integrações
+
+
+## Documentação da API
+
+### Métodos
+Requisições para a API devem seguir os padrões:
+| Método | Descrição |
+|---|---|
+| `GET` | Retorna informações de um ou mais registros. |
+| `POST` | Utilizado para criar um novo registro. |
+| `PUT` | Atualiza dados de um registro ou altera sua situação. |
+| `DELETE` | Remove um registro do sistema. |
+
+### Group Autenticação - OAuth
+
+Nossa API utiliza [OAuth2](https://oauth.net/2/) como forma de autenticação/autorização.
+
+
+### Respostas
+
+| Código | Descrição |
+|---|---|
+| `200` | Sucesso!|
+| `201` | Objeto persistido!|
+| `204` | Objeto excluído! |
+| `400` | Erro na requisição! |
+| `401` | Acesso não autorizado! |
+| `403` | Acesso proibido! |
+| `404` | Objeto não encontrado! |
+| `500` | Erro na aplicação|
+
+### Listar
+As ações de `listar` permitem o envio dos seguintes parâmetros:
+
+| Parâmetro | Descrição |
+|---|---|
+| `filtro` | Filtra dados pelo valor informado. |
+| `page` | Informa qual página deve ser retornada. |
+
+
+

@@ -38,7 +38,7 @@ function Carrossel() {
         </SwiperSlide>
         <SwiperSlide>
           <img className="swiper-slide-img"
-            src='https://i.imgur.com/Gj208Wc.png'
+            src='https://ik.imagekit.io/zcioxdl6o/50_%20off.png?updatedAt=1707227253247'
           />
         </SwiperSlide>
       </Swiper>

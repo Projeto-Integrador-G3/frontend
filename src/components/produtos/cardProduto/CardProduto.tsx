@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
 import Produto from '../../../models/Produto'
 import { CartContext } from '../../../contexts/CartContext'
-import { useContext, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import { AuthContext } from '../../../contexts/AuthContext'
 
 interface CardProdutoProps {
   produto: Produto
@@ -14,6 +15,23 @@ function CardProduto({ produto }: CardProdutoProps) {
   const handleSizeChange = (size: string) => {
     setSelectedSize(size);
   };
+
+  const { usuario, handleLogout } = useContext(AuthContext)
+  const [allowEdit, setAllowEdit] = useState<string>('hidden')
+  const [allowBuy, setAllowBuy] = useState<string>('block')
+
+  useEffect(() => {
+    if (usuario.token !== '' && usuario.usuario === 'root@root.com') {
+      
+        setAllowEdit('block')
+        setAllowBuy('hidden')
+        console.log(allowEdit)
+    }else{
+        setAllowEdit('hidden')
+        setAllowBuy('block')
+        console.log(allowEdit)
+    }
+  }, [usuario])
 
   return (
 
@@ -78,14 +96,27 @@ function CardProduto({ produto }: CardProdutoProps) {
 
         </div>
       </div>
-      <div className="flex flex-wrap">
+      <div className={`flex flex-wrap ${allowBuy}`}>
         <button className='w-full text-white bg-green-400 hover:bg-green-300 flex items-center 
                            justify-center py-2 font-bold'
           onClick={() => adicionarProduto(produto)}>
           Comprar
         </button>
-
       </div>
+
+      <div className={`flex ${allowEdit}`}>
+                <Link to={`/editarProduto/${produto.id}`}
+                    className='font-bold text-white w-full bg-green-400 hover:bg-green-300
+                        flex items-center justify-center py-2'>
+                    <button>Editar</button>
+                </Link>
+                <Link to={`/deletarProduto/${produto.id}`} className='font-bold text-white bg-red-400 hover:bg-red-700 w-full 
+                    flex items-center justify-center'>
+                    <button>Deletar</button>
+                </Link>
+            </div>
+      
+
     </div>
 
 

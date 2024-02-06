@@ -11,10 +11,10 @@ function Cart() {
     
     return (
         <div className="
-                bg-gray-200 
                 flex 
                 flex-col
                 justify-center
+                h-[80vh]
                 ">
 
             <h1 className="text-4xl text-center my-4">
@@ -33,7 +33,7 @@ function Cart() {
             </div>
 
             <button className="rounded text-white bg-green-400 
-          hover:bg-slate-800 w-1/4 py-2 mx-auto flex justify-center"
+        hover:bg-green-300 px-4 py-2 mx-auto flex justify-center cursor-pointer"
                 type="submit" 
                 disabled={items.length === 0 ? true : false}
                 onClick={limparCart}>

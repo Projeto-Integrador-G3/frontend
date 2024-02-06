@@ -80,13 +80,13 @@ function Navbar() {
 
               <>
                 <li className="hover:text-green-400">
-                  <Link to='/cadastroProduto' className='lg:px-5 p-2 block'>Add Produto</Link>
+                  <Link to='/cadastroProduto' className='lg:px-5 p-2 block'>Adicionar Produto</Link>
                 </li>
                 <li className="hover:text-green-400">
                   <Link to='/categorias' className='lg:px-5 p-2 block'>Categoria</Link>
                 </li>
                 <li className="hover:text-green-400">
-                  <Link to='/cadastrarCategoria' className='lg:px-5 p-2 block'>Add Categoria</Link>
+                  <Link to='/cadastrarCategoria' className='lg:px-5 p-2 block'>Adicionar Categoria</Link>
                 </li>
 
                 <li className="hover:text-green-400">

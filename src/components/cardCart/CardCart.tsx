@@ -11,7 +11,7 @@ function CardCart({ item }: CardProdutosProps) {
     const { adicionarProduto, removerProduto } = useContext(CartContext)
 
     return (
-        <div className='flex flex-col rounded-lg overflow-hidden justify-between bg-white'>
+        <div className='flex flex-col rounded-lg overflow-hidden justify-between bg-white my-10'>
             <div className='py-4'>
 
                 <img src={item.foto} className='mt-1 h-40 max-w-75 mx-auto' alt={item.nome} />

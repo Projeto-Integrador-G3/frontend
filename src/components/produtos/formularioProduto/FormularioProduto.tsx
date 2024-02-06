@@ -2,7 +2,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { ChangeEvent, useContext, useEffect, useState } from "react";
 import Produto from "../../../models/Produto";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
-import { RotatingLines } from "react-loader-spinner";
+import { ThreeDots } from "react-loader-spinner";
 import { ToastAlerta } from "../../../utils/ToastAlerta";
 import Categoria from "../../../models/Categoria";
 import { AuthContext } from "../../../contexts/AuthContext";
@@ -32,7 +32,7 @@ function FormularioProduto() {
         descricao: '',
         preco: 0,
         foto: '',
-        cor:'',
+        cor: '',
         tamanho: '',
         categoria: null,
     });
@@ -40,25 +40,25 @@ function FormularioProduto() {
     async function buscarProdutoPorId(id: string) {
         await buscar(`/produtos/${id}`, setProduto, {
             headers: {
-              'Authorization': token
+                'Authorization': token
             }
-          })
+        })
     }
 
     async function buscarCategoriaPorId(id: string) {
         await buscar(`/categorias/${id}`, setCategoria, {
             headers: {
-              'Authorization': token
+                'Authorization': token
             }
-          })
+        })
     }
 
     async function buscarCategorias() {
         await buscar('/categorias', setCategorias, {
             headers: {
-              'Authorization': token
+                'Authorization': token
             }
-          })
+        })
     }
 
     useEffect(() => {
@@ -72,11 +72,11 @@ function FormularioProduto() {
 
     useEffect(() => {
         if (token === '') {
-          ToastAlerta('Você precisa estar logado', '')
-          navigate('/login')
+            ToastAlerta('Você precisa estar logado', '')
+            navigate('/login')
         }
-      }, [token])
-      
+    }, [token])
+
     useEffect(() => {
         setProduto({
             ...produto,
@@ -106,9 +106,9 @@ function FormularioProduto() {
             try {
                 await atualizar(`/produtos`, produto, setProduto, {
                     headers: {
-                      'Authorization': token
+                        'Authorization': token
                     }
-                  })
+                })
                 ToastAlerta('Produto atualizado com sucesso', 'sucesso');
 
             } catch (error: any) {
@@ -120,9 +120,9 @@ function FormularioProduto() {
 
                 await cadastrar(`/produtos`, produto, setProduto, {
                     headers: {
-                      'Authorization': token
+                        'Authorization': token
                     }
-                  })
+                })
                 ToastAlerta('Produto cadastrado com sucesso', 'sucesso');
 
             } catch (error: any) {
@@ -228,12 +228,17 @@ function FormularioProduto() {
                 </div>
                 <button disabled={carregandoCategoria} type='submit' className='rounded disabled:bg-green-200 bg-green-300 hover:bg-green-400 text-white font-bold w-1/2 mx-auto flex py-2 justify-center'>
 
-                    {isLoading ? <RotatingLines
-                        strokeColor="white"
-                        strokeWidth="5"
-                        animationDuration="0.75"
-                        width="24"
-                        visible={true} /> : <span> {id === undefined ? 'Cadastrar' : 'Editar'}</span>}
+                    {isLoading ?
+                        <ThreeDots
+                            visible={true}
+                            height="80"
+                            width="80"
+                            color="#a1a79f"
+                            radius="9"
+                            ariaLabel="three-dots-loading"
+                            wrapperStyle={{}}
+                            wrapperClass="flex justify-center m-1"
+                        /> : <span> {id === undefined ? 'Cadastrar' : 'Editar'}</span>}
 
                 </button>
             </form>

@@ -54,7 +54,7 @@ function Navbar() {
 
             <X
               size={24}
-              color="#050505"
+              color="#FFF"
               weight="bold"
               className="lg:hidden block h-6 w-6 cursor-pointer"
               onClick={() => setOpen(!open)}
@@ -63,7 +63,7 @@ function Navbar() {
             :
             <List
               size={24}
-              color="#050505"
+              color="#FFF"
               weight="bold"
               className="lg:hidden block h-6 w-6 cursor-pointer"
               onClick={() => setOpen(!open)}

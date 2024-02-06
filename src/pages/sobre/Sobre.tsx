@@ -53,7 +53,7 @@ function Sobre() {
             <div className='min-h-screen '>
                 <div className='pr-[100px] pt-[100px] pl-[100px]'>
                     <div className='flex flex-row items-center'>
-                        <img className='rounded-full size-[34rem]' src="https://ik.imagekit.io/zcioxdl6o/20240131_180617_0000.png_ex=65cd2b56&is=65bab656&hm=1c201f4058f5f2d0ca8aafe8b224037b0ae0eb69773e1625c357aaa4d5d2ceb0&?updatedAt=1706882303135"
+                        <img className='size-[26rem]' src="https://ik.imagekit.io/4zbah2xtl/img/uni500x500-removebg-preview.png?updatedAt=1707232264334"
                             alt="logo Uni" />
 
                         <div className='box-border px-8 text-justify items-end'>

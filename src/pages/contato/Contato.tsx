@@ -3,18 +3,18 @@ function Contato() {
 
     return (
         <div id="container" className="flex justify-center h-screen" style={{ color: '#CACBCD' }}>
-            <div id="subcontainer" className="container grid grid-cols-1 md:grid-cols-2 gap-6 items-center text-green-400">
+            <div id="subcontainer" className="container grid grid-cols-1 md:grid-cols-2 gap-6 items-center text-slate-900">
                 <div className="text-center">
-                    <h1 className="text-6xl font-roboto italic mb-4">UNI</h1>
-                    <h2 className="text-2xl font-bold mb-4">Bem-vindo ao Nosso Formulário</h2>
+                    <h1 className="text-6xl  mb-4">UNI</h1>
+                    <h2 className="text-2xl font-bold mb-4"> O que uso não define meu gênero.</h2>
                     <p>
-                        Para conversar conosco ou realizar alguma doação,
-                        Por favor, preencha as informações ao lado.
+                        Para conversar conosco ou realizar alguma sugestão,
+                        por favor, preencha as informações ao lado:
                     </p>
                 </div>
 
-                <form className="space-y-3 flex flex-col">
-                    <label htmlFor="nome" className="block">
+                <form className="space-y-3 flex flex-col text-slate-900 font-bold ">
+                    <label htmlFor="nome" className="block ">
                         Nome
                     </label>
                     <input

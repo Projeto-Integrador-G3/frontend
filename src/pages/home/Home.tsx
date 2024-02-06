@@ -25,8 +25,7 @@ function Home() {
     return (
         <>
             <Carrossel />
-            <ListaProdutos />
-            <ModalProduto />
+            <ListaProdutos />         
         </>
 
     )

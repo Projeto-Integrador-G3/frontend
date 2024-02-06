@@ -24,22 +24,11 @@ const CardProduto: React.FC<CardProdutoProps> = ({ imgUrl, nomeProduto, descrica
 };
 
 function Home() {
-
-    const { usuario, handleLogout } = useContext(AuthContext)
-
-    let component: ReactNode
-
-    if (usuario.token !== '' && usuario.usuario === 'root@root.com') {
-        component = (
-            <ModalProduto/>
-        )
-    }
-    
+   
     return (
         <>
             <Carrossel />
             <ListaProdutos />
-            {component}
         </>
 
     )

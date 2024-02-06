@@ -19,9 +19,14 @@ Identificando esses problemas e decidimos desenvolver um e-commerce voltado para
 
 ## Stack utilizada
 
-**Back-end:** Java Spring boot, MYSQL
+**Back-end:** 
+- Java Spring boot
+- MYSQL
 
-**Front-end:** React, TailwindCSS, TypeScript 
+**Front-end:** 
+- React
+- TailwindCSS
+- TypeScript 
 
 
 
@@ -33,9 +38,15 @@ Desenvolver esse projeto em equipe do zero ao deploy
 
 ## Roadmap
 
-- Melhorar o suporte de navegadores
+- Melhorar o suporte de navegadores e responsividade
 
-- Adicionar mais integrações
+- Adicionar integrações
+
+- Melhorar o API Throttling
+
+- Diferenciação de permissões de usuários
+
+- Deploy em AWS
 
 
 ## Documentação da API

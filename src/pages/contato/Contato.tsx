@@ -2,10 +2,10 @@
 function Contato() {
 
     return (
-        <div id="container" className="flex justify-center h-screen" style={{ color: '#CACBCD' }}>
-            <div id="subcontainer" className="container grid grid-cols-1 md:grid-cols-2 gap-6 items-center text-slate-900">
-                <div className="text-center">
-                    <h1 className="text-6xl  mb-4">UNI</h1>
+        <div className="flex justify-center md:h-[80vh]" style={{ color: '#CACBCD' }}>
+            <div className="md:container grid grid-cols-1 md:grid-cols-2 gap-6 items-center text-slate-900 p-4">
+                <div className="text-center py-8 md:my-0">
+                    <h1 className="text-6xl md:mb-4">UNI</h1>
                     <h2 className="text-2xl font-bold mb-4"> O que uso não define meu gênero.</h2>
                     <p>
                         Para conversar conosco ou realizar alguma sugestão,
@@ -13,7 +13,7 @@ function Contato() {
                     </p>
                 </div>
 
-                <form className="space-y-3 flex flex-col text-slate-900 font-bold ">
+                <form className="space-y-3 flex flex-col text-slate-900 font-bold">
                     <label htmlFor="nome" className="block ">
                         Nome
                     </label>

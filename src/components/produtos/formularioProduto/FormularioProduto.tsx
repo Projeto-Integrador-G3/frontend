@@ -140,10 +140,10 @@ function FormularioProduto() {
 
     return (
         <div className="container flex flex-col mx-auto items-center">
-            <h1 className="text-4xl text-center my-8">{id !== undefined ? 'Editar Produto' : 'Cadastrar Produto'}</h1>
+            <h1 className="text-3xl text-center my-4">{id !== undefined ? 'Editar Produto' : 'Cadastrar Produto'}</h1>
 
-            <form onSubmit={gerarNovaProduto} className="flex flex-col w-1/2 gap-4">
-                <div className="flex flex-col gap-2">
+            <form onSubmit={gerarNovaProduto} className="flex flex-col w-1/2 gap-3">
+                <div className="flex flex-col gap-0.5">
                     <label htmlFor="nome">Nome</label>
                     <input
                         value={produto.nome}
@@ -155,7 +155,7 @@ function FormularioProduto() {
                         className="border-2 border-green-300 rounded p-2"
                     />
                 </div>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-0.5">
                     <label htmlFor="descricao">Descrição</label>
                     <input
                         value={produto.descricao}
@@ -167,7 +167,7 @@ function FormularioProduto() {
                         className="border-2 border-green-300 rounded p-2"
                     />
                 </div>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-0.5">
                     <label htmlFor="preco">Preço</label>
                     <input
                         value={produto.preco}
@@ -179,7 +179,7 @@ function FormularioProduto() {
                         className="border-2 border-green-300 rounded p-2"
                     />
                 </div>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-0.5">
                     <label htmlFor="foto">Foto</label>
                     <input
                         value={produto.foto}
@@ -191,7 +191,7 @@ function FormularioProduto() {
                         className="border-2 border-green-300 rounded p-2"
                     />
                 </div>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-0.5">
                     <label htmlFor="cor">Cor</label>
                     <input
                         value={produto.cor}
@@ -203,7 +203,7 @@ function FormularioProduto() {
                         className="border-2 border-green-300 rounded p-2"
                     />
                 </div>
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-0.5">
                     <label htmlFor="tamanho">Tamanho</label>
                     <input
                         value={produto.tamanho}
@@ -215,8 +215,7 @@ function FormularioProduto() {
                         className="border-2 border-green-300 rounded p-2"
                     />
                 </div>
-                <div className="flex flex-col gap-2">
-                    <p>Categoria da produto</p>
+                <div className="flex flex-col gap-0.5">
                     <select name="categoria" id="categoria" className='border p-2 border-green-300 rounded' onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)} >
                         <option value="" selected disabled>Selecione um categoria</option>
                         {categorias.map((categoria) => (

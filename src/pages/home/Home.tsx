@@ -1,6 +1,8 @@
+import { ReactNode, useContext, useEffect, useState } from "react";
 import Carrossel from "../../components/carrossel/Carrossel";
 import ListaProdutos from "../../components/produtos/listaProdutos/ListaProdutos";
 import ModalProduto from "../../components/produtos/modalProduto/ModalProduto";
+import { AuthContext } from "../../contexts/AuthContext";
 
 interface CardProdutoProps {
     imgUrl: string;
@@ -22,10 +24,22 @@ const CardProduto: React.FC<CardProdutoProps> = ({ imgUrl, nomeProduto, descrica
 };
 
 function Home() {
+
+    const { usuario, handleLogout } = useContext(AuthContext)
+
+    let component: ReactNode
+
+    if (usuario.token !== '' && usuario.usuario === 'root@root.com') {
+        component = (
+            <ModalProduto/>
+        )
+    }
+    
     return (
         <>
             <Carrossel />
-            <ListaProdutos />         
+            <ListaProdutos />
+            {component}
         </>
 
     )

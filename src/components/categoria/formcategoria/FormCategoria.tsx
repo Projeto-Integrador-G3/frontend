@@ -24,9 +24,9 @@ function FormCategoria() {
 
     async function buscarPorId(id: string) {
         try {
-            await buscar(`/categorias/${id}`, setCategoria,{
+            await buscar(`/categorias/${id}`, setCategoria, {
                 headers: { Authorization: token },
-              });
+            });
         } catch (error: any) {
             if (error.toString().includes('403')) {
                 ToastAlerta('O token expirou, favor logar novamente', "")
@@ -53,7 +53,6 @@ function FormCategoria() {
             ...categoria,
             [e.target.name]: e.target.value
         })
-        console.log(JSON.stringify(categoria))
     }
 
     function retornar() {
@@ -96,12 +95,12 @@ function FormCategoria() {
     }
 
     return (
-        <div className="container flex flex-col items-center justify-center mx-auto h-[80vh]">
-            <h1 className="text-4xl text-center my-8  font-bold">
+        <div className="container flex flex-col items-center justify-center mx-auto h-[80vh] w-full p-2 md:p-0">
+            <h1 className="text-3xl md:text-4xl text-center my-8  font-bold">
                 {id === undefined ? 'Cadastrar Categoria' : 'Editar Categoria'}
             </h1>
 
-            <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovaCategoria}>
+            <form className="w-auto md:w-1/2 flex flex-col gap-4" onSubmit={gerarNovaCategoria}>
                 <div className="flex flex-col gap-2">
                     <label htmlFor="descricao" className=" font-bold">Descrição</label>
                     <input
@@ -130,13 +129,13 @@ function FormCategoria() {
                     {isLoading ?
                         <ThreeDots
                             visible={true}
-                            height="80"
-                            width="80"
-                            color="#4fa94d"
+                            height="32"
+                            width="32"
+                            color="#a1a79f"
                             radius="9"
                             ariaLabel="three-dots-loading"
                             wrapperStyle={{}}
-                            wrapperClass="flex justify-center m-1"
+                            wrapperClass="flex justify-center"
                         /> :
                         <span>{id === undefined ? 'Cadastrar' : 'Atualizar'}</span>
 

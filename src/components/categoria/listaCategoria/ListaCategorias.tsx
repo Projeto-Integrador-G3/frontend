@@ -35,20 +35,22 @@ function ListaCategorias() {
     return (
         <>
             {categorias.length === 0 && (
-                <ThreeDots
-                    visible={true}
-                    height="80"
-                    width="80"
-                    color="#4fa94d"
-                    radius="9"
-                    ariaLabel="three-dots-loading"
-                    wrapperStyle={{}}
-                    wrapperClass="flex justify-center m-1"
-                />
+                <div className="flex justify-center items-center h-[70vh]">
+                    <ThreeDots
+                        visible={true}
+                        height="100"
+                        width="100"
+                        color="#a1a79f"
+                        radius="9"
+                        ariaLabel="three-dots-loading"
+                        wrapperStyle={{}}
+                        wrapperClass="flex justify-center m-1"
+                    />
+                </div>
             )}
             <div className="flex justify-center w-full my-4">
-                <div className="container flex flex-col">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div className="container flex flex-col p-4 md:p-0">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:p-2">
                         <>
                             {categorias.map((categoria) => (
                                 <>

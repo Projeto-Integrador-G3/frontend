@@ -5,7 +5,7 @@ function Slide01() {
       <div className='container grid grid-cols-2 text-green-400 py-6 '>
         <div className="flex flex-col gap-4 items-center justify-center py-4">
           <h2 className='md:text-5xl font-bold p-2'>
-            UNI - O que uso não define meu gênero.
+             O que uso não define meu gênero.
           </h2>
        
         </div>

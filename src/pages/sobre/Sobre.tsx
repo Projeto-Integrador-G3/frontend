@@ -76,7 +76,7 @@ function Sobre() {
                                     A solução escolhida foi criar um E-Commerce, motivada pela escassez de lojas que atendem diversos públicos sem distinção de preço.
                                     O projeto, intitulado UNI - O que uso não define meu gênero, visa a moda sem gênero, eliminando distinções de preços e oferecendo variedade em modelagens para atender a todos os corpos e gostos.
                                     A aplicação busca contribuir para a solução do problema social, proporcionando atendimento amplo a segmentos sociais afetados pela desigualdade no mercado industrial,
-                                    uprindo a carência na indústria da moda para aqueles que não se encaixam nos "padrões de corpo" convencionais, oferecendo opções a preços competitivos.
+                                    suprindo a carência na indústria da moda para aqueles que não se encaixam nos "padrões de corpo" convencionais, oferecendo opções a preços competitivos.
                                 </p>
 
                             </div>

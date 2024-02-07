@@ -177,8 +177,8 @@ function Sobre() {
 
                             imgUrl={"https://ik.imagekit.io/zcioxdl6o/matheus.png?updatedAt=1706885687644"}
                             nome={"Matheus Soares Rodrigues"}
-                            sobre={`Sou um estudante apaixonado por Tecnologia e Segurança da Informação na FATEC São Caetano do Sul.
-                        Minha afinidade com o campo da Tecnologia vem desde antes de ingressar nessa área.
+                            sobre={`Sou um estudante apaixonado por Tecnologia e Segurança da Informação,
+                        Minha afinidade com o campo da Tecnologia vem desde antes de ingressar na área.
                         Durante meu tempo no curso de mecânica de usinagem no Senai, tive a oportunidade de interagir com tornos CNC,
                         o que despertou meu interesse pela programação e pela eficiência proporcionada pela tecnologia.`}
                             linkedinUrl={"https://www.linkedin.com/in/matheus-soares-rodrigues-a56b11238/"}

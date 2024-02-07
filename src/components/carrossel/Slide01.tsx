@@ -1,7 +1,7 @@
 function Slide01() {
   return (
 
-    <div className="bg-green-200 pt-40 flex justify-center">
+    <div className="bg-green-200 pt-10 flex justify-center">
       <div className='container grid grid-cols-2 text-green-400 py-6 '>
         <div className="flex flex-col gap-4 items-center justify-center py-4">
           <h2 className='md:text-5xl font-bold p-2'>

@@ -32,7 +32,7 @@ function Carrossel() {
         </SwiperSlide>
 
         <SwiperSlide>
-          <img className="swiper-slide-img hidden md:block"
+          <img className="swiper-slide-img object-fill hidden md:block"
             src='https://ik.imagekit.io/zcioxdl6o/Banner_para_site.png_ex=65d38f16&is=65c11a16&hm=f4b3999cb1ff7b5787a793f2e1f3ddc7b27b7a29480e3fc6eef2c4703684f5cb&?updatedAt=1707153950424'
           />
           <img className="swiper-slide-img md:hidden"
@@ -40,8 +40,11 @@ function Carrossel() {
           />
         </SwiperSlide>
         <SwiperSlide>
-          <img className="swiper-slide-img"
+          <img className="swiper-slide-img object-fill hidden md:block"
             src='https://ik.imagekit.io/zcioxdl6o/50_%20off.png?updatedAt=1707227253247'
+          />
+          <img className="swiper-slide-img md:hidden object-fill"
+            src='https://ik.imagekit.io/zcioxdl6o/uni-banner-off.png?updatedAt=1707159022610'
           />
         </SwiperSlide>
       </Swiper>

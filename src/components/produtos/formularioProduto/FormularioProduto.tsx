@@ -231,8 +231,8 @@ function FormularioProduto() {
                     {isLoading ?
                         <ThreeDots
                             visible={true}
-                            height="80"
-                            width="80"
+                            height="32"
+                            width="32"
                             color="#a1a79f"
                             radius="9"
                             ariaLabel="three-dots-loading"

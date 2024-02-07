@@ -11,20 +11,21 @@ function CardCart({ item }: CardProdutosProps) {
     const { adicionarProduto, removerProduto } = useContext(CartContext)
 
     return (
-        <div className='flex flex-col rounded-lg overflow-hidden justify-between bg-white'>
+        <div className='border-green-400 border flex flex-col rounded-lg overflow-hidden justify-between bg-white my-10'>
+            <div className="flex w-full bg-green-400 py-3 items-center"/>
             <div className='py-4'>
 
                 <img src={item.foto} className='mt-1 h-40 max-w-75 mx-auto' alt={item.nome} />
 
                 <div className='p-4'>
-                    <p className='text-sm text-center uppercase'>{item.nome}</p>
+                    
+                    <p className='text-sm text-center font-bold'>{item.nome}</p>
                     <h3 className='text-xl text-center font-bold uppercase'>
                         {Intl.NumberFormat('pt-BR', {
                             style: 'currency',
                             currency: 'BRL'
                         }).format(item.preco)}
                     </h3>
-                    <p className='text-sm italic text-center'>Categoria: Tipo </p>
                 </div>
             </div>
             <div className="flex flex-wrap">
